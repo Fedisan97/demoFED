@@ -1,0 +1,32 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="kkkkk.MainWindow"
+        Icon="Assets/app.ico"
+        Width="400" Height="520"
+
+        WindowStartupLocation="CenterScreen"
+        Title="МастерСклад вход">
+
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
+       
+        
+        
+        <!-- <Image Source="Assets/logo.png" Width="250"/> -->
+        
+        
+        
+        <TextBlock Text="вход в систему" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center"/>
+        
+        <TextBlock Text="логин"/>
+        <TextBox Name="LoginBox" Width="220" Watermark="логин"/>
+   
+        <TextBlock Name="ErrorText" Foreground="Red" Width="220" TextWrapping="Wrap"/>
+        
+        <Button Content="войти" Width="220" HorizontalAlignment="Center" Click="Enter_Click"/>
+        
+        
+        
+        <Button Content="войти как гость" Width="220" HorizontalAlignment="Center" Click="Guest_Click"/>
+    </StackPanel>
+
+</Window>

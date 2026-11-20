@@ -1,0 +1,49 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="kkkkk.CatalogWindow"
+        x:CompileBindings="False"
+        Icon="Assets/app.ico"
+        Width="900" Height="600"
+        WindowStartupLocation="CenterScreen"
+        Title="МастерСклад каталог">
+
+    <DockPanel Margin="10">
+
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,10">
+            <TextBlock Name="FioBox" VerticalAlignment="Center" FontWeight="Bold"/>
+        </StackPanel>
+
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="10" Margin="0,0,0,10">
+            <TextBox Name="SearchBox" Width="250" Watermark="Поиск по названию или описанию" KeyUp="SearchBox_KeyUp"/>
+            <ComboBox Name="SortBox" Width="200" SelectedIndex="0" SelectionChanged="SortBox_SelectionChanged">
+                <ComboBoxItem>Без сортировки</ComboBoxItem>
+                <ComboBoxItem>Цена: по возрастанию</ComboBoxItem>
+                <ComboBoxItem>Цена: по убыванию</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="FilterBox" Width="200" SelectionChanged="FilterBox_SelectionChanged"/>
+        </StackPanel>
+
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+            <Button Content="Назад" Width="120" Click="Back_Click"/>
+        </StackPanel>
+
+        <ListBox Name="ProductList">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Background="{Binding CardColor}" CornerRadius="6" Padding="10" Margin="5" Width="800">
+                        <StackPanel Spacing="3">
+                            <TextBlock Text="{Binding CategoryName}" FontSize="12" Foreground="#666666"/>
+                            <TextBlock Text="{Binding ProductName}" FontSize="18" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding ManufacturerName}"/>
+                            <TextBlock Text="{Binding Composition}"/>
+                            <TextBlock Text="{Binding PriceText}" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding CountText}"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+    </DockPanel>
+
+</Window>
